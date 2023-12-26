@@ -6,13 +6,12 @@ import java.util.Random;
  */
 public class InOrder {
 	public static void main (String[] args) {
-		Random rnd = new Random();
 		int someNumber = -1;
-		int nextNumber = rnd.nextInt(0,10);
+		int nextNumber = (int)(Math.random() * 10);;
 		while(someNumber <= nextNumber) {
 			System.out.print(nextNumber + " ");
 			someNumber = nextNumber;
-			nextNumber = rnd.nextInt(0,10);
+			nextNumber = (int)(Math.random() * 10);;
 		}
 	}
 }
