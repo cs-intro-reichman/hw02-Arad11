@@ -9,8 +9,14 @@ public class DamkaBoard {
 				System.out.print(" ");
 			}
 			for (int j = 0; j < boardLength; j++) {
-				System.out.print("* ");
+				if (i % 2 == 1 && j == boardLength - 1) {
+					 System.out.print("*");
+				 }
+				 else {
+					 System.out.print("* ");
+				 }
 			}
+			// delete the space in the end when i is odd
 			System.out.println();
 		}
 	}
