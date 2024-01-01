@@ -49,7 +49,7 @@ public class OneOfEachStats {
 			totalBoys += boysInFamily;
 			totalGirls += girlsInFamily;
 
-			childrenPerFamily += (boysInFamily + girlsInFamily);
+			childrenPerFamily += String.valueOf(boysInFamily + girlsInFamily);
 			boysInFamily = 0;
 			girlsInFamily = 0;
 		}
