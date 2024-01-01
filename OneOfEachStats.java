@@ -57,7 +57,6 @@ public class OneOfEachStats {
 		avarageChildrenPerFamily = (totalBoys + totalGirls) / T;
 		for(int i = 0; i < T ; i++) {
 			int children = Character.getNumericValue(childrenPerFamily.charAt(i));
-			System.out.println(children);
 			if(children == 2) {
 				twoChildren++;
 			}
@@ -68,7 +67,6 @@ public class OneOfEachStats {
 				fourOrMoreChildren++;
 			}
 		}
-		System.out.println(childrenPerFamily);
 		System.out.println("Average: " + avarageChildrenPerFamily + " children to get at least one of each gender.");
 		System.out.println("Number of families with 2 children: " + (int)twoChildren);
 		System.out.println("Number of families with 3 children: " + (int)threeChildren);
