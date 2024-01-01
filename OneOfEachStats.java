@@ -13,7 +13,7 @@ public class OneOfEachStats {
 		double T = Integer.parseInt(args[0]);
 		int seed = Integer.parseInt(args[1]);
 		double totalBoys = 0, totalGirls = 0;
-		double boysInFamily = 0, girlsInFamily = 0;
+		int boysInFamily = 0, girlsInFamily = 0;
 		double twoChildren = 0, threeChildren = 0, fourOrMoreChildren = 0;
 		String childrenPerFamily = "";
 		double avarageChildrenPerFamily;
@@ -54,9 +54,10 @@ public class OneOfEachStats {
 			girlsInFamily = 0;
 		}
 
-		avarageChildrenPerFamily = (totalBoys + totalGirls) / (2*T);
+		avarageChildrenPerFamily = (totalBoys + totalGirls) / T;
 		for(int i = 0; i < T ; i++) {
 			int children = Character.getNumericValue(childrenPerFamily.charAt(i));
+			System.out.println(children);
 			if(children == 2) {
 				twoChildren++;
 			}
@@ -67,7 +68,7 @@ public class OneOfEachStats {
 				fourOrMoreChildren++;
 			}
 		}
-
+		System.out.println(childrenPerFamily);
 		System.out.println("Average: " + avarageChildrenPerFamily + " children to get at least one of each gender.");
 		System.out.println("Number of families with 2 children: " + (int)twoChildren);
 		System.out.println("Number of families with 3 children: " + (int)threeChildren);
