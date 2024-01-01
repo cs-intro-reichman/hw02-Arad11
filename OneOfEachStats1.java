@@ -6,15 +6,14 @@
  */
 public class OneOfEachStats1 {
 	public static void main (String[] args) {
-		int T = Integer.parseInt(args[0]);
-		int totalBoys = 0, totalGirls = 0;
-		int boysInFamily = 0, girlsInFamily = 0;
-		int twoChildren = 0, threeChildren = 0, fourOrMoreChildren = 0;
+		double T = Integer.parseInt(args[0]);
+		double totalBoys = 0, totalGirls = 0;
+		double boysInFamily = 0, girlsInFamily = 0;
+		double twoChildren = 0, threeChildren = 0, fourOrMoreChildren = 0;
 		String childrenPerFamily = "";
 		double avarageChildrenPerFamily;
 
 		for (int i = 0; i < T; i++) {	
-			
 			if(Math.random() < 0.5) {
 				boysInFamily++;
 			}
@@ -22,7 +21,7 @@ public class OneOfEachStats1 {
 				girlsInFamily++;
 			}
 			
-			while (totalBoys == 0 || totalGirls == 0) {
+			while (boysInFamily == 0 || girlsInFamily == 0) {
 				if(Math.random() < 0.5) {
 					boysInFamily++;
 				}
@@ -30,20 +29,21 @@ public class OneOfEachStats1 {
 					girlsInFamily++;
 				}
 			}
-
 			totalBoys += boysInFamily;
 			totalGirls += girlsInFamily;
-			childrenPerFamily += (totalBoys + totalGirls);
+
+			childrenPerFamily += (boysInFamily + girlsInFamily);
 			boysInFamily = 0;
 			girlsInFamily = 0;
 		}
 
 		avarageChildrenPerFamily = (totalBoys + totalGirls) / T;
-		for(int i = 0; i< childrenPerFamily.length() - 1; i++) {
-			if((int)childrenPerFamily.indexOf(i) == 2) {
+		for(int i = 0; i < T ; i++) {
+			int children = Character.getNumericValue(childrenPerFamily.charAt(i));
+			if(children == 2) {
 				twoChildren++;
 			}
-			else if ((int)childrenPerFamily.indexOf(i) == 3) {
+			else if (children == 3) {
 				threeChildren++;
 			}
 			else {
@@ -52,9 +52,9 @@ public class OneOfEachStats1 {
 		}
 
 		System.out.println("Average: " + avarageChildrenPerFamily + " children to get at least one of each gender.");
-		System.out.println("Number of families with 2 children: " + twoChildren);
-		System.out.println("Number of families with 2 children: " + threeChildren);
-		System.out.println("Number of families with 2 children: " + fourOrMoreChildren);
+		System.out.println("Number of families with 2 children: " + (int)twoChildren);
+		System.out.println("Number of families with 3 children: " + (int)threeChildren);
+		System.out.println("Number of families with 4 or more children: " + (int)fourOrMoreChildren);
 		
 		if (twoChildren > threeChildren && twoChildren > fourOrMoreChildren) {
 			System.out.println("The most common number of children is 2");	
