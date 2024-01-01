@@ -54,7 +54,7 @@ public class OneOfEachStats {
 			girlsInFamily = 0;
 		}
 
-		avarageChildrenPerFamily = (totalBoys + totalGirls) / T;
+		avarageChildrenPerFamily = (totalBoys + totalGirls) / (2*T);
 		for(int i = 0; i < T ; i++) {
 			int children = Character.getNumericValue(childrenPerFamily.charAt(i));
 			if(children == 2) {
