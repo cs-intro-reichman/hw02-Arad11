@@ -14,10 +14,13 @@ public class OneOfEachStats {
 		int seed = Integer.parseInt(args[1]);
 		int totalBoys = 0, totalGirls = 0;
 		int twoChildren = 0, threeChildren = 0, fourOrMoreChildren = 0;
+		int totalBoys = 0, totalGirls = 0;
+		int twoChildren = 0, threeChildren = 0, fourOrMoreChildren = 0;
 		String childrenPerFamily = "";
 		double avarageChildrenPerFamily;
 		// Initailizes a random numbers generator with the given seed value
         Random generator = new Random(seed);  
+
 		for (int i = 0; i < T; i++) {   
 			int currentBoysInFamily = 0, currentGirlsInFamily = 0;
 		
@@ -29,27 +32,33 @@ public class OneOfEachStats {
 				}
 			}
 			totalBoys += currentBoysInFamily;
-			totalGirls += currentGirlsInFamily;			int totalKidsPerFamily = currentBoysInFamily + currentGirlsInFamily;
+			totalGirls += currentGirlsInFamily;
+			int totalKidsPerFamily = currentBoysInFamily + currentGirlsInFamily;
 			childrenPerFamily += totalKidsPerFamily;
 		}
+
 		avarageChildrenPerFamily = (totalBoys + totalGirls) / (double)T;
 
 		for (int i = 0; i < childrenPerFamily.length(); i++) {
 			int children = Character.getNumericValue(childrenPerFamily.charAt(i));
 			if (children == 2) {
+			if (children == 2) {
 				twoChildren++;
 			} else if (children == 3) {
+			} else if (children == 3) {
 				threeChildren++;
+			} else {
 			} else {
 				fourOrMoreChildren++;
 			}
 		}
 		
+		
 		System.out.println("Average: " + avarageChildrenPerFamily + " children to get at least one of each gender.");
 		System.out.println("Number of families with 2 children: " + twoChildren);
 		System.out.println("Number of families with 3 children: " + threeChildren);
 		System.out.println("Number of families with 4 or more children: " + fourOrMoreChildren);
-
+		
 		if (twoChildren > threeChildren && twoChildren > fourOrMoreChildren) {
 			System.out.println("The most common number of children is 2");	
 			System.out.println("The most common number of children is 2.");	
