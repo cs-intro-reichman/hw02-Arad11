@@ -18,7 +18,6 @@ public class OneOfEachStats {
 		double avarageChildrenPerFamily;
 		// Initailizes a random numbers generator with the given seed value
         Random generator = new Random(seed);  
-
 		for (int i = 0; i < T; i++) {   
 			int currentBoysInFamily = 0, currentGirlsInFamily = 0;
 		
@@ -30,11 +29,9 @@ public class OneOfEachStats {
 				}
 			}
 			totalBoys += currentBoysInFamily;
-			totalGirls += currentGirlsInFamily;
-			int totalKidsPerFamily = currentBoysInFamily + currentGirlsInFamily;
+			totalGirls += currentGirlsInFamily;			int totalKidsPerFamily = currentBoysInFamily + currentGirlsInFamily;
 			childrenPerFamily += totalKidsPerFamily;
 		}
-
 		avarageChildrenPerFamily = (totalBoys + totalGirls) / (double)T;
 
 		for (int i = 0; i < childrenPerFamily.length(); i++) {
@@ -52,11 +49,13 @@ public class OneOfEachStats {
 		System.out.println("Number of families with 2 children: " + twoChildren);
 		System.out.println("Number of families with 3 children: " + threeChildren);
 		System.out.println("Number of families with 4 or more children: " + fourOrMoreChildren);
-		
+
 		if (twoChildren > threeChildren && twoChildren > fourOrMoreChildren) {
+			System.out.println("The most common number of children is 2");	
 			System.out.println("The most common number of children is 2.");	
 		}
 		else if (threeChildren > twoChildren && threeChildren > fourOrMoreChildren) {
+			System.out.println("The most common number of children is 3");
 			System.out.println("The most common number of children is 3.");
 		}
 		else {
